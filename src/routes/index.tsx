@@ -1,19 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Button } from "@/components/ui/button"
+import { Navbar } from "@/components/Navbar"
+import { Hero } from "@/components/Hero"
+import { About } from "@/components/About"
+import { AppSection } from "@/components/AppSection"
+import { Registration } from "@/components/Registration"
+import { Sponsors } from "@/components/Sponsors"
+import { Founder } from "@/components/Founder"
+import { Footer } from "@/components/Footer"
 
 export const Route = createFileRoute("/")({ component: App })
 
 function App() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#050505] font-sans antialiased selection:bg-[#E2FF00] selection:text-black">
+      {/* Cinematic Film Grain Overlay */}
+      <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+
+      <Navbar />
+      <Hero />
+      <About />
+      <AppSection />
+      <Registration />
+      <Sponsors />
+      <Founder />
+      <Footer />
     </div>
   )
 }
